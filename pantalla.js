@@ -23,7 +23,7 @@ class Pantalla {
     // sigue..
     
   }
-
+//dos arreglos de textos 
   mostrar(indexP,x1,y1,ancho1,alto1,x2,y2,ancho2,alto2) {
     this.indexP = indexP;
     this.x1 = x1;
@@ -35,8 +35,8 @@ class Pantalla {
     this.ancho2 = ancho2;
     this.alto2 = alto2;
     noStroke();
-    image (pantallas[indexP],0,0,this.width,this.height);
-    fill(0);
+    image (this.p[indexP],0,0,this.width,this.height);
+    fill(255,100);
     rect(this.x1, this.y1 - 5, this.ancho1, this.alto1);
     rect(this.x2, this.y2 - 5, this.ancho2, this.alto2);
     textAlign(CENTER, CENTER);
@@ -44,5 +44,9 @@ class Pantalla {
     textSize(15);
     //text(textos[0][this.indexP], this.x1, this.y1 - 5, this.ancho1, this.alto1);
     //text(textos[1][this.indexP], this.x2, this.y2 - 5, this.ancho2, this.alto2);
+  }
+  
+  juego(){
+    ///proximamente
   }
 }
