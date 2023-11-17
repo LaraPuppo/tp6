@@ -6,202 +6,179 @@ class Aventura {
     //this.textos = [];
     //this.pantallas = p;
     this.estado = 0;
-    this.boton = new Boton ();
-    this.pantalla = new Pantalla (this.pantallas);  
-    
+    this.boton1 = new Boton ();
+    this.boton2 = new Boton ();
+    this.pantalla = new Pantalla (pantallas);
   }
 
   mostrar() {
     console.log(this.estado);
     switch (this.estado) {
-      //this.background = fondo;
-      case 0:
-      //image (pantalla[0],0,0);
-        this.pantalla.mostrar(pantallas,0,100,200,100,300,300,200,100,0);
-        this.boton.mostrar(100,100,200,100,"holis",1,0);
-        break;
-      case 1:
-        this.pantalla.mostrar(pantallas,100,200,200,300,300,200,100,300);
-        this.boton.mostrar(100,100,200,100,"alo",2,1);
-         //this.boton01.mostrar(255,200,0);
-        break;
-        
-      // sigue...
+    case 0:
+      this.pantalla.mostrar(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+      this.boton1.mostrar(200, 515, 200, 50, " ", 0);
+      break;
+    case 1:
+      this.pantalla.mostrar(1, 10, 15, 290, 75, 365, 420, 225, 100);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 2:
+      this.pantalla.mostrar(2, 25, 5, 200, 75, 25, 80, 200, 71);
+      this.boton1.mostrar(250, 10, 320, 50, "Enojarse con Agamenón");
+      this.boton2.mostrar(250, 80, 320, 50, "No enojarse con Agamenón");
+      break;
+    case 3:
+      this.pantalla.mostrar(3, 0, 10, 300, 55, 0, 65, 300, 50);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 4:
+      this.pantalla.mostrar(4, 0, 10, 300, 55, 0, 65, 300, 50);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 5:
+      this.pantalla.mostrar(5, 25, 5, 300, 125, 360, 5, 200, 105);
+      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      break;
+    case 6:
+      this.pantalla.mostrar(6, 20, 10, 250, 80, 330, 25, 250, 50);
+      this.boton1.mostrar(20, 95, 350, 50, "Acceder a hablar con Patroclo");
+      this.boton2.mostrar (20, 160, 350, 50, "Negarse a hablar con Patroclo");
+      break;
+    case 7:
+      this.pantalla.mostrar(7, 10, 10, 400, 100, 320, 90, 280, 80);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 8:
+      this.pantalla.mostrar(8, 25, 5, 200, 80, 360, 5, 200, 80);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 9:
+      this.pantalla.mostrar(9, 25, 15, 200, 100, 360, 40, 200, 50);
+      this.boton1.mostrar(25, 130, 200, 100, "Ordenar a todos vengar a Patroclo");
+      this.boton2.mostrar(360, 130, 200, 100, "Ordenar a todos escuchar a Odiseo");
+      break;
+    case 10:
+      this.pantalla.mostrar(10, 25, 480, 200, 100, 360, 450, 200, 150);
+      this.boton1.mostrar(25, 15, 200, 100, "No corresponder sus sentimientos");
+      this.boton2.mostrar(360, 15, 200, 100, "Corresponder sus sentimientos");
+      break;
+    case 11:
+      this.pantalla.mostrar(11, 100, 50, 200, 100, 400, 20, 200, 100);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 12:
+      this.pantalla.mostrar(12, 25, 5, 200, 100, 360, 5, 200, 100);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 13:
+      this.pantalla.mostrar(13, 25, 5, 200, 100, 360, 5, 200, 100);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 14:
+      this.pantalla.mostrar(14, 25, 10, 200, 100, 25, 120, 200, 150);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 15:
+      this.pantalla.mostrar(15, 25, 5, 300, 150, 375, 50, 200, 80);
+      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      break;
+    case 16:
+      this.pantalla.mostrar(16, 25, 5, 200, 200, 360, 5, 200, 200);
+      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      break;
+    case 17:
+      this.pantalla.mostrar(17, 15, 70, 300, 150, 15, 240, 300, 50);
+      this.boton1.mostrar(380, 530, 200, 50, "Continuar");
+      break;
+    case 18:
+      this.pantalla.mostrar(18, 25, 5, 200, 100, 360, 5, 200, 100);
+      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      break;
     }
   }
 
   interactuar() {
-    if (this.estado == 0 && this.boton.estaSobre()) {
+    if (this.estado === 0 && this.boton1.estaSobre()) {
       this.estado = 1;
+      return;
     }
-    //} else if (this.estado === 1 && this.boton01(100,100,200,100,"ola",2)) {
-    //  this.estado = 2;
-    //}
-    // sigue...
+    if (this.estado === 1 && this.boton1.estaSobre()) {
+      this.estado = 2;
+      return;
+    }
+    if (this.estado === 2 && this.boton2.estaSobre()) {
+      this.estado = 4;
+      return;
+    }
+    if (this.estado === 2 && this.boton1.estaSobre()) {
+      this.estado = 3;
+      return;
+    }
+    if (this.estado === 3 && this.boton1.estaSobre()) {
+      this.estado = 6;
+      return;
+    }
+    if (this.estado === 4 && this.boton1.estaSobre()) {
+      this.estado = 5;
+      return;
+    }
+    if (this.estado === 6 && this.boton1.estaSobre()) {
+      this.estado = 7;
+      return;
+    }
+    if (this.estado === 6 && this.boton2.estaSobre()) {
+      this.estado = 8;
+      return;
+    }
+    if (this.estado === 7 && this.boton1.estaSobre()) {
+      this.estado = 10;
+      return;
+    }
+    if (this.estado === 8 && this.boton1.estaSobre()) {
+      this.estado = 9;
+      return;
+    }
+    if (this.estado === 9 && this.boton1.estaSobre()) {
+      this.estado = 12;
+      return;
+    }
+    if (this.estado === 9 && this.boton2.estaSobre()) {
+      this.estado = 11;
+      return;
+    }
+    if (this.estado === 10 && this.boton1.estaSobre()) {
+      this.estado = 14;
+      return;
+    }
+    if (this.estado === 10 && this.boton2.estaSobre()) {
+      this.estado = 13;
+      return;
+    }
+    if (this.estado === 13 && this.boton1.estaSobre()) {
+      this.estado = 16;
+      return;
+    }
+    if (this.estado === 14 && this.boton1.estaSobre()) {
+      this.estado = 9;
+      return;
+    }
+    if (this.estado === 11 && this.boton1.estaSobre()) {
+      this.estado = 17;
+      return;
+    }
+    if (this.estado === 17 && this.boton1.estaSobre()) {
+      this.estado = 18;
+      return;
+    }
+    if (this.estado === 12 && this.boton1.estaSobre()) {
+      this.estado = 15;
+      return;
+    }
+    //if (this.estado === 0 && this.boton.estaEn()) {
+    //  this.estado = 1;
+    //} else if (this.estado === 1) {
+    //  if (this.boton.estaEn()) {
+    //    this.estado = 4;
+    //  }
   }
 }
-  //botonCuadrado(x, y, ancho, alto) {
-  //  return mouseX > x && mouseX < x + ancho && mouseY > y && mouseY < y + alto;
-  //}
-
-  //botonCircular(x, y, r) {
-  //  return dist(mouseX, mouseY, x, y) <= r;
-  //}
-
-  //infoPantallas(indexP, x1, y1, ancho1, alto1, x2, y2, ancho2, alto2) {
-  //  noStroke();
-  //  image(this.pantallas[indexP], 0, 0);
-  //  fill(255, 100);
-  //  rect(x1, y1 - 5, ancho1, alto1);
-  //  rect(x2, y2 - 5, ancho2, alto2);
-  //  textAlign(CENTER, CENTER);
-  //  fill(0);
-  //  textSize(15);
-  //  text(this.textos[0][indexP], x1, y1 - 5, ancho1, alto1);
-  //  text(this.textos[1][indexP], x2, y2 - 5, ancho2, alto2);
-  //}
-
-//  hover(x, y, ancho, alto, opcion) {
-//    if (this.botonCuadrado(x, y, ancho, alto)) {
-//      fill(50, 100);
-//      strokeWeight(3);
-//      stroke(0);
-//      rect(x, y, ancho, alto);
-//    } else {
-//      fill(100, 100);
-//      noStroke();
-//      rect(x, y, ancho, alto);
-//    }
-//    fill(255);
-//    textAlign(CENTER, CENTER);
-//    textSize(25);
-//    text(opcion, x, y - 5, ancho, alto);
-//  }
-
-//  botonFinal(x, txt) {
-//    if (dist(mouseX, mouseY, x, 530) <= 100 / 2) {
-//      fill(200);
-//    } else {
-//      fill(255);
-//    }
-//    circle(x, 530, 100);
-//    fill(0);
-//    textSize(20);
-//    textAlign(CENTER, CENTER);
-//    text(txt, x, 530 - 5);
-//  }
-
-//  botonContinuar() {
-//    this.hover(380, 530, 200, 50, "Continuar");
-//  }
-//}
-
-
-
-
-
-//class Aventura {
-//  constructor() {
-//    this.c = 19;
-//    this.y = 0;
-//    this.pantallas = [];
-//    this.textos = [
-//      ["", ""],
-//      ["", ""],
-//    ];
-//    this.estado = 0;
-
-//    for (let i = 0; i < this.c; i++) {
-//      this.pantallas[i] = loadImage("pantalla" + i + ".png");
-//    }
-
-//    this.textos[0][1] =
-//      "La guerra de troya estaba en curso y ya había transcurrido una década desde que los griegos habían sitiado la ciudad de Troya";
-//    this.textos[1][1] =
-//      "Los griegos mantenían cierta ventaja, pero no habían logrado tomar la ciudad. La situación era tensa y la lucha se prolongaba";
-//    this.textos[0][2] =
-//      "Aquiles tiene un desacuerdo con Agamenón debido al reparto de tesoros de guerra.";
-//    this.textos[1][2] =
-//      "Agamenón le quita a Aquiles su premio de guerra, una joven llamada Briseida";
-//    // Continúa con el resto de los textos...
-//  }
-
-//  mostrar() {
-//    console.log(this.estado);
-//    switch (this.estado) {
-//      case 0:
-//        image(this.pantallas[0], 0, 0);
-//        this.hover(205, 515, 190, 40, "");
-//        break;
-//      case 1:
-//        this.infoPantallas(1, 10, 15, 290, 75, 365, 420, 225, 100);
-//        this.botonContinuar();
-//        break;
-//      // Continúa con el resto de los casos...
-//    }
-//  }
-
-//  interactuar() {
-//    if (this.estado === 0 && this.botonCuadrado(205, 515, 190, 40)) {
-//      this.estado = 1;
-//    } else if (this.estado === 1 && this.botonCuadrado(380, 530, 200, 50)) {
-//      this.estado = 2;
-//    }
-//    // Continúa con el resto de las interacciones...
-//  }
-
-//  botonCuadrado(x, y, ancho, alto) {
-//    return mouseX > x && mouseX < x + ancho && mouseY > y && mouseY < y + alto;
-//  }
-
-//  botonCircular(x, y, r) {
-//    return dist(mouseX, mouseY, x, y) <= r;
-//  }
-
-//  infoPantallas(indexP, x1, y1, ancho1, alto1, x2, y2, ancho2, alto2) {
-//    noStroke();
-//    image(this.pantallas[indexP], 0, 0);
-//    fill(255, 100);
-//    rect(x1, y1 - 5, ancho1, alto1);
-//    rect(x2, y2 - 5, ancho2, alto2);
-//    textAlign(CENTER, CENTER);
-//    fill(0);
-//    textSize(15);
-//    text(this.textos[0][indexP], x1, y1 - 5, ancho1, alto1);
-//    text(this.textos[1][indexP], x2, y2 - 5, ancho2, alto2);
-//  }
-
-//  hover(x, y, ancho, alto, opcion) {
-//    if (this.botonCuadrado(x, y, ancho, alto)) {
-//      fill(50, 100);
-//      strokeWeight(3);
-//      stroke(0);
-//      rect(x, y, ancho, alto);
-//    } else {
-//      fill(100, 100);
-//      noStroke();
-//      rect(x, y, ancho, alto);
-//    }
-//    fill(255);
-//    textAlign(CENTER, CENTER);
-//    textSize(25);
-//    text(opcion, x, y - 5, ancho, alto);
-//  }
-
-//  botonFinal(x, txt) {
-//    if (dist(mouseX, mouseY, x, 530) <= 100 / 2) {
-//      fill(200);
-//    } else {
-//      fill(255);
-//    }
-//    circle(x, 530, 100);
-//    fill(0);
-//    textSize(20);
-//    textAlign(CENTER, CENTER);
-//    text(txt, x, 530 - 5);
-//  }
-
-//  botonContinuar() {
-//    this.hover(380, 530, 200, 50, "Continuar");
-//  }
-//}
