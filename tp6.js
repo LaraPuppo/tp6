@@ -2,8 +2,8 @@ let aventura;
 let pantallas = [];
 
 
-function preLoad(){
-  for ( let i = 0; i < 19; i++ ) {
+function preload(){
+  for ( let i = 0; i < 20; i++ ) {
     pantallas[i] = loadImage("assets/pantalla"+ i +".png");
   }
 }
@@ -14,7 +14,8 @@ function setup() {
 }
 
 function draw() {
-  aventura.mostrar(pantallas);
+  aventura.mostrar();
+  text("x:"+ mouseX + ",y:"+ mouseY, mouseX, mouseY);
 }
 
 function mousePressed() {
