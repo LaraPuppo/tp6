@@ -5,37 +5,47 @@ class Boton {
     this.ancho = 0;
     this.alto = 0;
     this.texto = "a";
-    this.nuevoEstado = 0;
-    this.estado = 0;
   }
 
-  mostrar(x,y,ancho,alto, txt, nuevoEstado, estado) {
+  mostrar(x,y,ancho,alto, txt) {
     this.x = x;
     this.y = y;
     this.ancho = ancho;
     this.alto = alto;
     this.texto = txt;
-    this.nuevoEstado = nuevoEstado;
-    this.estado = estado;
     if (this.estaSobre()) {
-      fill(200);
+      fill(0,100);  
+      stroke(1);
       strokeWeight(3);
-      stroke(0);
     } else {
-      fill(0);
-      noStroke();
+      fill(0,50);
     }
     rect(this.x, this.y, this.ancho, this.alto);
     fill(255);
+    noStroke();
     textAlign(CENTER, CENTER);
     textSize(25);
-    text(this.texto, this.x, this.y - 5, this.ancho, this.alto);
+    text(this.texto, this.x, this.y, this.ancho, this.alto);
   }
+  //       if (this.estaEn()) {
+  //    fill(255,0,0);
+  //    strokeWeight(3);
+  //    stroke(0);
+  //  } else {
+  //    fill(0);
+  //    noStroke();
+  //  }
+  //  rect(this.x,300, this.ancho, this.alto);
+   
+  //}
 
   estaSobre() {
     return mouseX > this.x && mouseX < this.x + this.ancho && mouseY > this.y && mouseY < this.y + this.alto;
   }
 
+ //estaEn() {
+ //   return mouseX > this.x && mouseX < this.x + this.ancho && mouseY > 300 && mouseY < 300 + this.alto;
+ // }
   clic() {
     //if (this.estaSobre()) {
     //  this.estado = this.nuevoEstado; 
