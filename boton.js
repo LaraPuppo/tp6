@@ -7,18 +7,18 @@ class Boton {
     this.texto = "a";
   }
 
-  mostrar(x,y,ancho,alto, txt) {
+  mostrar(x, y, ancho, alto, txt) {
     this.x = x;
     this.y = y;
     this.ancho = ancho;
     this.alto = alto;
     this.texto = txt;
     if (this.estaSobre()) {
-      fill(0,100);  
+      fill(0, 100);
       stroke(1);
       strokeWeight(3);
     } else {
-      fill(0,50);
+      fill(0, 50);
     }
     rect(this.x, this.y, this.ancho, this.alto);
     fill(255);
@@ -27,28 +27,8 @@ class Boton {
     textSize(25);
     text(this.texto, this.x, this.y, this.ancho, this.alto);
   }
-  //       if (this.estaEn()) {
-  //    fill(255,0,0);
-  //    strokeWeight(3);
-  //    stroke(0);
-  //  } else {
-  //    fill(0);
-  //    noStroke();
-  //  }
-  //  rect(this.x,300, this.ancho, this.alto);
-   
-  //}
 
   estaSobre() {
     return mouseX > this.x && mouseX < this.x + this.ancho && mouseY > this.y && mouseY < this.y + this.alto;
-  }
-
- //estaEn() {
- //   return mouseX > this.x && mouseX < this.x + this.ancho && mouseY > 300 && mouseY < 300 + this.alto;
- // }
-  clic() {
-    //if (this.estaSobre()) {
-    //  this.estado = this.nuevoEstado; 
-    //}
   }
 }
