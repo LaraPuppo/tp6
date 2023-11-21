@@ -1,10 +1,5 @@
 class Aventura {
   constructor() {
-    //this.c = 19;
-    //this.y = 0;
-    //this.pantalla = [];
-    //this.textos = [];
-    //this.pantallas = p;
     this.estado = 0;
     this.boton1 = new Boton ();
     this.boton2 = new Boton ();
@@ -37,7 +32,7 @@ class Aventura {
       break;
     case 5:
       this.pantalla.mostrar(5, 25, 5, 300, 125, 360, 5, 200, 105);
-      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      this.boton1.mostrar(200, 500, 200, 50, "Creditos");
       break;
     case 6:
       this.pantalla.mostrar(6, 20, 10, 250, 80, 330, 25, 250, 50);
@@ -80,11 +75,11 @@ class Aventura {
       break;
     case 15:
       this.pantalla.mostrar(15, 25, 5, 300, 150, 375, 50, 200, 80);
-      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      this.boton1.mostrar(200, 500, 200, 50, "Creditos");
       break;
     case 16:
       this.pantalla.mostrar(16, 25, 5, 200, 200, 360, 5, 200, 200);
-      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      this.boton1.mostrar(200, 500, 200, 50, "Creditos");
       break;
     case 17:
       this.pantalla.mostrar(17, 15, 70, 300, 150, 15, 240, 300, 50);
@@ -92,8 +87,11 @@ class Aventura {
       break;
     case 18:
       this.pantalla.mostrar(18, 25, 5, 200, 100, 360, 5, 200, 100);
-      this.boton1.mostrar(240, 500, 200, 50, "Creditos");
+      this.boton1.mostrar(200, 500, 200, 50, "Creditos");
       break;
+    case 19:
+      this.pantalla.mostrar(19, 25, 5, 200, 100, 360, 5, 200, 100);
+      this.boton1.mostrar(200, 500, 200, 50, "Reiniciar");
     }
   }
 
@@ -174,11 +172,25 @@ class Aventura {
       this.estado = 15;
       return;
     }
-    //if (this.estado === 0 && this.boton.estaEn()) {
-    //  this.estado = 1;
-    //} else if (this.estado === 1) {
-    //  if (this.boton.estaEn()) {
-    //    this.estado = 4;
-    //  }
+    if (this.estado === 5 && this.boton1.estaSobre()) {
+      this.estado = 19;
+      return;
+    }
+    if (this.estado === 15 && this.boton1.estaSobre()) {
+      this.estado = 19;
+      return;
+    }
+    if (this.estado === 16 && this.boton1.estaSobre()) {
+      this.estado = 19;
+      return;
+    }
+    if (this.estado === 18 && this.boton1.estaSobre()) {
+      this.estado = 19;
+      return;
+    }
+    if (this.estado === 19 && this.boton1.estaSobre()) {
+      this.estado = 0;
+      return;
+    }
   }
 }
