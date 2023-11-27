@@ -4,6 +4,7 @@ class Aventura {
     this.boton1 = new Boton ();
     this.boton2 = new Boton ();
     this.pantalla = new Pantalla (pantallas);
+    this.jueguito = new Juego (fuente, pantallas);
   }
 
   mostrar() {
@@ -36,8 +37,8 @@ class Aventura {
       break;
     case 6:
       this.pantalla.mostrar(6, 20, 10, 250, 80, 330, 25, 250, 50);
-      this.boton1.mostrar(20, 95, 350, 50, "Acceder a hablar con Patroclo");
-      this.boton2.mostrar (20, 160, 350, 50, "Negarse a hablar con Patroclo");
+      this.boton1.mostrar(200, 500, 200, 50, "Continuar");
+      //this.boton2.mostrar (20, 160, 350, 50, "Negarse a hablar con Patroclo");
       break;
     case 7:
       this.pantalla.mostrar(7, 10, 10, 400, 100, 320, 90, 280, 80);
@@ -92,6 +93,17 @@ class Aventura {
     case 19:
       this.pantalla.mostrar(19, 25, 5, 200, 100, 360, 5, 200, 100);
       this.boton1.mostrar(200, 500, 200, 50, "Reiniciar");
+      break;
+    case 20:
+      this.pantalla.mostrar(20, 150, 40, 300, 80, 150, 285, 300, 80);
+      this.boton1.mostrar(200, 500, 200, 50, "Jugar");
+      break;
+    case 21:
+      
+      this.jueguito.mostrar(this.estado);
+      this.boton1.mostrar(100,100,100,100,"gano");
+      this.boton2.mostrar(300,100,100,100,"pierdo");
+      break;
     }
   }
 
@@ -121,13 +133,13 @@ class Aventura {
       return;
     }
     if (this.estado === 6 && this.boton1.estaSobre()) {
-      this.estado = 7;
+      this.estado = 20;
       return;
     }
-    if (this.estado === 6 && this.boton2.estaSobre()) {
-      this.estado = 8;
-      return;
-    }
+    //if (this.estado === 6 && this.boton2.estaSobre()) {
+    //  this.estado = 8;
+    //  return;
+    //}
     if (this.estado === 7 && this.boton1.estaSobre()) {
       this.estado = 10;
       return;
@@ -192,5 +204,24 @@ class Aventura {
       this.estado = 0;
       return;
     }
+    if (this.estado === 20 && this.boton1.estaSobre()) {
+     
+      this.estado = 21;
+      return;
+    }
+    if (this.estado === 21 && this.boton1.estaSobre()) {
+       this.jueguito.reiniciar();
+      this.estado = 7;
+      return;
+    }
+    if (this.estado === 21 && this.boton2.estaSobre()) {
+      this.estado = 8;
+      return;
+    }
+  }
+  
+  teclado (){
+    this.jueguito.teclado();
+    
   }
 }
