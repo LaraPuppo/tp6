@@ -36,8 +36,8 @@ class Pantalla {
     this.textos[1][6] = "Él busca convencer a Aquiles de volver a luchar";
     this.textos[0][7] = "Patroclo intenta disipar la ira y la tristeza que consume a Aquiles. Le habla de la importancia de su presencia en el campo de batalla, de cómo su liderazgo y habilidades marciales inspiran a los soldados griegos";
     this.textos[1][7] = "Le insta a reconsiderar su decisión de retirarse y a unirse nuevamente a la lucha contra los troyanos";
-    this.textos[0][8] = "Sin que se dé cuenta Aquiles, Patroclo roba sus armaduras";
-    this.textos[1][8] = "Al hacerse pasar por Aquiles, Patroclo es asesinado en batalla por Héctor";
+    this.textos[0][8] = "Patroclo no logra atravezar el campo de batalla";
+    this.textos[1][8] = "Y es asesinado por Héctor";
     this.textos[0][9] = "Al enterarse de la muerte de su mejor amigo, Aquiles no duda en volver a la batalla a asesinar a Héctor";
     this.textos[1][9] = "Pero es detenido por Odiseo que pide que escuchen su idea";
     this.textos[0][10] = "Patroclo siente que el momento es propicio para expresar sus propios sentimientos";
