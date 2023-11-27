@@ -60,6 +60,8 @@ class Pantalla {
     this.textos[1][18] = "Luego, arrastra el cuerpo de Héctor por el suelo como un acto de desprecio hacia los troyanos";
     this.textos[0][19] = "Creado por Lara Puppo y Agustina Ulrich";
     this.textos[1][19] = "Profes: Mati y Fer";
+    this.textos[0][20] = "Ayuda a Patroclo a llegar a la tienda de Aquiles pasando por el campo de batalla y saltando los obstáculos que se interponen en su camino.";
+    this.textos[1][20] = "Deberas presionar ESPACIO para saltar. Cuentas con 3 vidas y tienes que sobrevivir 30 segundos para llegar a destino";
   }
 
   mostrar(indexP, x1, y1, ancho1, alto1, x2, y2, ancho2, alto2) {
