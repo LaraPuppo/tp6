@@ -204,13 +204,12 @@ class Aventura {
       this.estado = 0;
       return;
     }
-    if (this.estado === 20 && this.boton1.estaSobre()) {
-     
+    if (this.estado === 20 && this.boton1.estaSobre()) {     
       this.estado = 21;
+      this.jueguito.reiniciar();
       return;
     }
     if (this.estado === 21 && this.boton1.estaSobre()) {
-       this.jueguito.reiniciar();
       this.estado = 7;
       return;
     }
