@@ -94,21 +94,21 @@ class Juego {
       }
     }
 
-    reiniciarJuego() {
-      this.gameEnded = false;
-      this.lives = 3;
-      this.speed = 6;
-      this.obstacleSpeed = 6;
-      this.startTime = 0;
-      this.nextObstacleTime = 0;
-      this.speedIncreased = false;
-      this.obstaculos = [];
-      this.estado = 1;
-      this.gameStarted = false;
-      this.player.velocity = 0;
-      this.player.x = 100;
-      this.player.y = height - this.player.height;
-    }
+    //reiniciarJuego() {
+    //  this.gameEnded = false;
+    //  this.lives = 3;
+    //  this.speed = 6;
+    //  this.obstacleSpeed = 6;
+    //  this.startTime = 0;
+    //  this.nextObstacleTime = 0;
+    //  this.speedIncreased = false;
+    //  this.obstaculos = [];
+    //  this.estado = 1;
+    //  this.gameStarted = false;
+    //  this.player.velocity = 0;
+    //  this.player.x = 100;
+    //  this.player.y = height - this.player.height;
+    //}
 
     teclado() {
       if (keyCode === 32) {
